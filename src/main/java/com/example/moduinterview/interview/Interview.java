@@ -4,6 +4,7 @@ import com.example.moduinterview.enums.InterviewStatus;
 import com.example.moduinterview.enums.InterviewType;
 import com.example.moduinterview.enums.MoneyUnit;
 import com.example.moduinterview.enums.Region;
+import com.example.moduinterview.interview.model.InterviewInput;
 import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,15 +16,17 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
 @Entity
+@Setter
+@Getter
 public class Interview {
 
   @Id
@@ -42,9 +45,8 @@ public class Interview {
   private LocalDateTime dueDate;
   private LocalDateTime interviewDate;
 
-
-  @Enumerated(value = javax.persistence.EnumType.STRING)
   private String description;
+  @Enumerated(value = javax.persistence.EnumType.STRING)
   private InterviewType interviewType;
 
 
@@ -63,5 +65,24 @@ public class Interview {
   @Enumerated(value = javax.persistence.EnumType.STRING)
   private Region region;
 
+
+  //Method for Resetting all the fields of Interview from InterviewInput
+  public void setInterviewFrom(InterviewInput interviewInput) {
+    this.recruitNum = interviewInput.getRecruitNum();
+    this.title = interviewInput.getTitle();
+    this.dueDate = interviewInput.getDueDate();
+    this.interviewDate = interviewInput.getInterviewDate();
+    this.description = interviewInput.getDescription();
+    this.interviewType = interviewInput.getInterviewType();
+    this.moneyUnit = interviewInput.getMoneyUnit();
+    this.interviewStatus = interviewInput.getInterviewStatus();
+    this.contactName = interviewInput.getContactName();
+    this.contactPhone = interviewInput.getContactPhone();
+    this.contactEmail = interviewInput.getContactEmail();
+    this.regDate = interviewInput.getRegDate();
+    this.modifiedDate = interviewInput.getModifiedDate();
+    this.thumbnailLink = interviewInput.getThumbnailLink();
+    this.region = interviewInput.getRegion();
+  }
 
 }
