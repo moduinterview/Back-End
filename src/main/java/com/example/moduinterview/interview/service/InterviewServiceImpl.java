@@ -1,8 +1,8 @@
 package com.example.moduinterview.interview.service;
 
-import com.example.moduinterview.ServiceResult;
+import com.example.moduinterview.common.ServiceResult;
 import com.example.moduinterview.enums.InterviewType;
-import com.example.moduinterview.interview.Interview;
+import com.example.moduinterview.interview.entity.Interview;
 import com.example.moduinterview.interview.model.InterviewInput;
 import com.example.moduinterview.interview.repository.InterviewRepository;
 import java.util.List;
@@ -20,7 +20,7 @@ public class InterviewServiceImpl implements InterviewService {
   /*
   InterviewInput의 정보를 받아 Interview Entity를 생성하고
   InterviewRepository를 통해 DB에 저장한다.
-  TODO: 서비스 정책 확정필요
+  TODO: 비즈니스 정책 확정필요
   추가 안되는 케이스? 가령 동일제목이라던가
    */
 
@@ -65,15 +65,18 @@ public class InterviewServiceImpl implements InterviewService {
   ///인터뷰 타입반환
   @Override
   public List<InterviewType> getAllInterviewType() {
+
+
+
     return null;
   }
 
   ///인터뷰 조회수
   @Override
-  public ServiceResult InterviewHits(Long id, String email) {
+  public ServiceResult InterviewHits(Long interviewId, Long userId) {
+
     return null;
   }
-
   ///인터뷰 좋아요
   @Override
   public ServiceResult InterviewLike(Long id, String email) {

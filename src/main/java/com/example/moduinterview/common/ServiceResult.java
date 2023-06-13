@@ -1,4 +1,4 @@
-package com.example.moduinterview;
+package com.example.moduinterview.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

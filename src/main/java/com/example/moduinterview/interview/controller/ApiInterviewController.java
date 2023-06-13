@@ -1,4 +1,4 @@
-package com.example.moduinterview.interview;
+package com.example.moduinterview.interview.controller;
 
 
 import com.example.moduinterview.interview.repository.InterviewRepository;

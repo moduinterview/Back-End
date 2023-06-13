@@ -1,12 +1,11 @@
 package com.example.moduinterview.interview.service;
 
-import com.example.moduinterview.ServiceResult;
+import com.example.moduinterview.common.ServiceResult;
 import com.example.moduinterview.enums.InterviewType;
 import com.example.moduinterview.interview.model.InterviewInput;
 import java.util.List;
 
 public interface InterviewService {
-
 
   ///인터뷰 추가
   ServiceResult addInterview(InterviewInput interviewInput);
@@ -21,7 +20,7 @@ public interface InterviewService {
   List<InterviewType> getAllInterviewType();
 
   ///인터뷰 조회수
-  ServiceResult InterviewHits(Long id, String email);
+  ServiceResult InterviewHits(Long interviewId, Long userId);
 
   ///인터뷰 좋아요
   ServiceResult InterviewLike(Long id, String email);

@@ -1,4 +1,4 @@
-package com.example.moduinterview.interview;
+package com.example.moduinterview.interview.entity;
 
 import com.example.moduinterview.enums.InterviewStatus;
 import com.example.moduinterview.enums.InterviewType;
